@@ -1,3 +1,0 @@
-document.getElementById("mybutton").onclick = function () {
-    location.href = "lab2.html";
-};
