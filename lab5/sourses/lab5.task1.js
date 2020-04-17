@@ -6,40 +6,40 @@ constructor(g_Name,g_Surname,g_BD,g_Gender) {
     this.Gernder=g_Gender;
 } 
 
-//make setters 
+  // make setters 
 
-get_BD(old_date) {
-    let new_BDdata = old_date.split('/').map(function (val) { 
-        return parseInt(val, 10);
-    }) 
-    return new_BDdata;
-} 
-BDcode() {
-    const mounth = {
-      1: "A", 2: "B", 3: "C", 4: "D", 5: "E", 6: "H",
-      7: "L", 8: "M", 9: "P", 10: "R", 11: "S", 12: "T"
-    }
-    let data = this.get_BD(this.BirthDayDate);  
-
-    let year = data[2] %100; 
-    if(year<10){ 
-        year= '0'+ year;
-    }  
-    let day= this.Gernder== 'F'? data[0]+ 40: data[0]; 
-    if(day<10){
-        day='0'+day;
-    }
-   let BDcode = year+ mounth[data[1]] + day;
-   return BDcode;
-}
-
-vow(vow_letter) {
-    return ['a', 'e', 'i', 'o', 'u'].indexOf(vow_letter.toLowerCase()) !== -1;
+  get_BD(old_date) {
+      let new_BDdata = old_date.split('/').map(function (val) { 
+          return parseInt(val, 10);
+      }) 
+      return new_BDdata;
   } 
+  BDcode() {
+      const mounth = {
+        1: "A", 2: "B", 3: "C", 4: "D", 5: "E", 6: "H",
+        7: "L", 8: "M", 9: "P", 10: "R", 11: "S", 12: "T"
+      }
+      let data = this.get_BD(this.BirthDayDate);  
 
-Namecode() {
- return this._codeFromNames(this._delSecondCons(this.Name));
-}
+      let year = data[2] %100; 
+      if(year<10){ 
+          year= '0'+ year;
+      }  
+      let day= this.Gernder== 'F'? data[0]+ 40: data[0]; 
+      if(day<10){
+          day='0'+day;
+      }
+    let BDcode = year+ mounth[data[1]] + day;
+    return BDcode;
+  }
+
+  vow(vow_letter) {
+      return ['a', 'e', 'i', 'o', 'u'].indexOf(vow_letter.toLowerCase()) !== -1;
+    } 
+
+  Namecode() {
+  return this._codeFromNames(this._delSecondCons(this.Name));
+  }
 
   _delSecondCons(string) {
     let consIdx = [];
@@ -82,10 +82,9 @@ Namecode() {
     return code+"X".repeat(3-code.length);
   }
 
-getcode() { 
-    return (this.Surnamecode()+this.Namecode() + this.BDcode()  ).toUpperCase();
- 
-}
+  getcode() { 
+      return (this.Surnamecode()+this.Namecode() + this.BDcode()  ).toUpperCase();
+  }
 } 
 
 NewPerson = new Person('Matt',"Edabit","1/1/1900",'M')  
