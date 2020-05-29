@@ -20,7 +20,7 @@ query = new URLSearchParams ({
         "previousClose"
     ],
      "types" : ["quote"], 
-     "token" : 'pk_43be5d85b43c4a78837039b3e86a5f39'
+     "token" : ''
 });
 
 
